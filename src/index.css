@@ -1,4 +1,10 @@
-body {
+html{
+  font-size: 65%;
+  box-sizing: border-box;
+}
+
+body, #root{
+  height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +16,45 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+body, select, input, textarea{
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "main"
+  "footer";
+  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-columns: 1fr;
+  height: 100%;
+}
+header{
+  grid-area: header;
+  background-color: aquamarine;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+header a{
+  color: white;
+  margin-left: 1rem;
+}
+a:hover{
+  color: black;
+}
+main{
+  grid-area: main;
+}
+footer{
+  grid-area: footer;
+  background-color: aquamarine;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
