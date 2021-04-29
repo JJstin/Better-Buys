@@ -1,0 +1,36 @@
+{
+    "products":[
+        {
+            "_id": "toy1",
+            "title": "Toy 1",
+            "description": "about toy 1",
+            "price": 19,
+            "avaliableSizes": ["XL", "L"],
+            "image": "/images/toy1.jpeg"
+        },
+        {
+            "_id": "toy2",
+            "title": "Toy 2",
+            "description": "about toy 2",
+            "price": 28.50123123,
+            "avaliableSizes": ["XL", "L"],
+            "image": "/images/toy2.jpeg"
+        },
+        {
+            "_id": "toy3",
+            "title": "Toy 3",
+            "description": "about toy 3",
+            "price": 19,
+            "avaliableSizes": ["XL", "L"],
+            "image": "/images/toy3.jpeg"
+        },
+        {
+            "_id": "toy4",
+            "title": "Toy 4",
+            "description": "about toy 4",
+            "price": 19,
+            "avaliableSizes": ["XL", "L"],
+            "image": "/images/toy4.jpeg"
+        }
+    ]
+}
