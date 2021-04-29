@@ -5,7 +5,7 @@
             "title": "Toy 1",
             "description": "about toy 1",
             "price": 19,
-            "avaliableSizes": ["XL", "L"],
+            "avaliableSizes": ["Large", "Small"],
             "image": "/images/toy1.jpeg"
         },
         {
@@ -13,7 +13,7 @@
             "title": "Toy 2",
             "description": "about toy 2",
             "price": 28.50123123,
-            "avaliableSizes": ["XL", "L"],
+            "avaliableSizes": ["Large", "Middium"],
             "image": "/images/toy2.jpeg"
         },
         {
@@ -21,7 +21,7 @@
             "title": "Toy 3",
             "description": "about toy 3",
             "price": 19,
-            "avaliableSizes": ["XL", "L"],
+            "avaliableSizes": ["Small", "Middium"],
             "image": "/images/toy3.jpeg"
         },
         {
@@ -29,7 +29,7 @@
             "title": "Toy 4",
             "description": "about toy 4",
             "price": 19,
-            "avaliableSizes": ["XL", "L"],
+            "avaliableSizes": ["Small"],
             "image": "/images/toy4.jpeg"
         }
     ]
