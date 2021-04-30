@@ -2,17 +2,39 @@ import React, { Component } from 'react'
 import formatCurrency from '../utils'
 
 export default class Cart extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            Name:'',
+            Email:'',
+            Address:'',
+            showCheckout: false,
+        }
+    }
+    handleInput = (e) => {
+        this.setState({[e.target.name]:e.target.value})
+    }
+    createOrder = (e) =>{
+        e.preventDefault()
+        const order={
+            name: this.state.Name,
+            email: this.state.Email,
+            address: this.state.Address,
+            cartItems: this.props.cartItems
+        }
+        this.props.createOrder(order)
+    }
     render() {
-        const {cartItems} = this.props
+        const { cartItems } = this.props
         return (
             <div>
-                {cartItems.length === 0 
-                ? (<div className="cart cart-header">Cart is Empty</div>) 
-                : (<div className="cart cart-header">You have {cartItems.length} product{cartItems.length>1?"s":""} in your cart</div>)}
+                {cartItems.length === 0
+                    ? (<div className="cart cart-header">Cart is Empty</div>)
+                    : (<div className="cart cart-header">You have {cartItems.length} product{cartItems.length > 1 ? "s" : ""} in your cart</div>)}
                 <div>
                     <div className="cart">
                         <ul className="cart-items">
-                            {cartItems.map((item)=>(
+                            {cartItems.map((item) => (
                                 <li key={item._id}>
                                     <div>
                                         <img src={item.image} alt={item.title}></img>
@@ -20,7 +42,7 @@ export default class Cart extends Component {
                                     <div>
                                         <div>{item.title}</div>
                                         <div className="right">
-                                           {formatCurrency(item.price)} x {item.count} {" "}
+                                            {formatCurrency(item.price)} x {item.count} {" "}
                                             <button className="button" onClick={() => this.props.removeFromCart(item)}>Remove</button>
                                         </div>
 
@@ -29,16 +51,58 @@ export default class Cart extends Component {
                             ))}
                         </ul>
                     </div>
-                    {cartItems.length!==0 && (
-                        <div className="cart">
-                            <div className="total">
-                                <div>
-                                    Total:{' '}
-                                    {formatCurrency(cartItems.reduce((a,c)=>a + c.price*c.count, 0))}
-                                </div>    
-                                <button className="button primary">Proceed</button>
+                    {cartItems.length !== 0 && (
+                        <>
+                            <div className="cart">
+                                <div className="total">
+                                    <div>
+                                        Total:{' '}
+                                        {formatCurrency(cartItems.reduce((a, c) => a + c.price * c.count, 0))}
+                                    </div>
+                                    <button className="button primary" onClick={() => this.setState({ showCheckout: true })}>Proceed</button>
+                                </div>
                             </div>
-                        </div>
+                            {this.state.showCheckout && (
+                                <div className="cart">
+                                    <form onSubmit={this.createOrder}>
+                                        <ul className="form-container">
+                                            <li>
+                                                <label>Email</label>
+                                                <input
+                                                    name="Email"
+                                                    type="email"
+                                                    required
+                                                    onChange={this.handleInput}
+                                                ></input>
+                                            </li>
+                                            <li>
+                                                <label>Name</label>
+                                                <input
+                                                    name="Name"
+                                                    type="text"
+                                                    required
+                                                    onChange={this.handleInput}
+                                                ></input>
+                                            </li>
+                                            <li>
+                                                <label>Address</label>
+                                                <input
+                                                    name="Address"
+                                                    type="text"
+                                                    required
+                                                    onChange={this.handleInput}
+                                                ></input>
+                                            </li>
+                                            <li>
+                                                <button type="submit" className="button primary" onClick={this.createOrder}>
+                                                    Check Out
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </form>
+                                </div>
+                            )}
+                        </>
                     )}
                 </div>
             </div>
