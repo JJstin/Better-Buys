@@ -1,36 +1,76 @@
 {
     "products":[
         {
-            "_id": "toy1",
-            "title": "Toy 1",
-            "description": "about toy 1",
-            "price": 19,
-            "avaliableSizes": ["Large", "Small"],
-            "image": "/images/toy1.jpeg"
-        },
-        {
-            "_id": "toy2",
-            "title": "Toy 2",
-            "description": "about toy 2",
-            "price": 28.50123123,
-            "avaliableSizes": ["Large", "Middium"],
-            "image": "/images/toy2.jpeg"
-        },
-        {
-            "_id": "toy3",
-            "title": "Toy 3",
-            "description": "about toy 3",
-            "price": 19,
-            "avaliableSizes": ["Small", "Middium"],
-            "image": "/images/toy3.jpeg"
-        },
-        {
-            "_id": "toy4",
-            "title": "Toy 4",
-            "description": "about toy 4",
-            "price": 19,
+            "_id": "1",
+            "title": "sofa",
+            "description": "about ",
+            "price": 1,
             "avaliableSizes": ["Small"],
-            "image": "/images/toy4.jpeg"
+            "image": "/images/sofa.jpeg"
+        },
+        {
+            "_id": "2",
+            "title": "chair",
+            "description": "about ",
+            "price": 1,
+            "avaliableSizes": ["Small"],
+            "image": "/images/chair.jpeg"
+        },
+        {
+            "_id": "3",
+            "title": "clock",
+            "description": "about ",
+            "price": 1,
+            "avaliableSizes": ["Small"],
+            "image": "/images/clock.jpeg"
+        },
+        {
+            "_id": "4",
+            "title": "cup",
+            "description": "about ",
+            "price": 1,
+            "avaliableSizes": ["Small"],
+            "image": "/images/cup.jpeg"
+        },
+        {
+            "_id": "5",
+            "title": "pouch",
+            "description": "about ",
+            "price": 1,
+            "avaliableSizes": ["Small"],
+            "image": "/images/pouch.jpeg"
+        },
+        {
+            "_id": "6",
+            "title": "statuette",
+            "description": "about ",
+            "price": 1,
+            "avaliableSizes": ["Small"],
+            "image": "/images/statuette.jpeg"
+        },
+        {
+            "_id": "7",
+            "title": "bag",
+            "description": "about ",
+            "price": 1,
+            "avaliableSizes": ["Small"],
+            "image": "/images/bag.jpeg"
+        },
+        {
+            "_id": "8",
+            "title": "vase I",
+            "description": "about ",
+            "price": 1,
+            "avaliableSizes": ["Small"],
+            "image": "/images/vase1.jpeg"
+        },
+        {
+            "_id": "9",
+            "title": "vase II",
+            "description": "about ",
+            "price": 1,
+            "avaliableSizes": ["Small"],
+            "image": "/images/vase2.jpeg"
         }
     ]
 }

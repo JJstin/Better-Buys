@@ -89,7 +89,7 @@ footer{
 
 .products li{
   flex: 0 1 29rem;
-  height: 47rem;
+  height: 56rem;
   padding: 1rem;
 }
 .product{
@@ -99,8 +99,8 @@ footer{
   height: 100%;
 }
 .product img{
-  max-width: 37rem;
-  max-height: 37rem;
+  max-width: 30rem;
+  max-height: 46rem;
 }
 .productPrice{
   display:flex;
@@ -215,7 +215,7 @@ input{
   max-height: 96vh;
 }
 .product-details img{
-  max-height: 100vh;
+  max-height: 84vh;
   max-width: 46rem;
   margin: 0 auto;
 }
@@ -230,4 +230,34 @@ input{
   right: 1rem;
   top: 2.5rem;
   z-index: 1000;
+}
+
+/* Order Details */
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.order-details li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-details li div {
+  padding: 10px;
+}
+.order-details .items {
+  text-align: right;
+  padding: 10000;
+}
+.success-message {
+  color: green;
+}
+
+.modal{
+  width: 100rem;
 }
