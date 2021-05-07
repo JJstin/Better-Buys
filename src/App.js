@@ -43,34 +43,34 @@ class App extends React.Component {
     localStorage.setItem("cartItems", JSON.stringify(cartItems))
   }
 
-  sortProducts = (event) => {
-    const sortValue = event.target.value
-    console.log("sort product", sortValue)
-    this.setState((state) => ({
-      sort: sortValue,
-      products: this.state.products.sort((a, b) => {
-        if (sortValue === "lowest") {
-          return (a.price < b.price) ? -1 : 1
-        } else if (sortValue === "highest") {
-          return (a.price > b.price) ? -1 : 1
-        } else {
-          return (a._id < b._id) ? -1 : 1
-        }
-      })
-    }))
-  }
-  filterProducts = (event) => {
-    const filterValue = event.target.value
-    console.log("filter product", filterValue)
-    if (event.target.value === "") {
-      this.setState({ size: filterValue, products: data.products })
-    } else {
-      this.setState({
-        size: filterValue,
-        products: data.products.filter((product) => product.avaliableSizes.includes(filterValue))//product.avaliableSizes.indexOf(event.target.value)>=0)
-      })
-    }
-  }
+  // sortProducts = (event) => {
+  //   const sortValue = event.target.value
+  //   console.log("sort product", sortValue)
+  //   this.setState((state) => ({
+  //     sort: sortValue,
+  //     products: this.state.products.sort((a, b) => {
+  //       if (sortValue === "lowest") {
+  //         return (a.price < b.price) ? -1 : 1
+  //       } else if (sortValue === "highest") {
+  //         return (a.price > b.price) ? -1 : 1
+  //       } else {
+  //         return (a._id < b._id) ? -1 : 1
+  //       }
+  //     })
+  //   }))
+  // }
+  // filterProducts = (event) => {
+  //   const filterValue = event.target.value
+  //   console.log("filter product", filterValue)
+  //   if (event.target.value === "") {
+  //     this.setState({ size: filterValue, products: data.products })
+  //   } else {
+  //     this.setState({
+  //       size: filterValue,
+  //       products: data.products.filter((product) => product.avaliableSizes.includes(filterValue))//product.avaliableSizes.indexOf(event.target.value)>=0)
+  //     })
+  //   }
+  // }
 
 
   render() {
@@ -83,14 +83,8 @@ class App extends React.Component {
           <main>
             <div className="content">
               <div className="main">
-                <Filter
-                  count={this.state.products.length}
-                  size={this.state.size}
-                  sort={this.state.sort}
-                  filterProducts={this.filterProducts}
-                  sortProducts={this.sortProducts}
-                ></Filter>
-                <Products products={this.state.products} addToCart={this.addToCart}></Products>
+                <Filter></Filter>
+                <Products addToCart={this.addToCart}></Products>
               </div>
               <div className="sidebar">
                 <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart} createOrder={this.createOrder}></Cart>
