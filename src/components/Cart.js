@@ -7,7 +7,7 @@ import Zoom from "react-reveal/Zoom"
 
 export default class Cart extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       Name: '',
       Email: '',
