@@ -72,11 +72,21 @@ app.post("/api/orders", async (req, res) => {
       !req.body.total ||
       !req.body.cartItems
     ) {
-      return res.send({ message: "Data is required." });
+      return res.send({ message: "Data is required." })
     }
-    const order = await Order(req.body).save();
-    res.send(order);
-  });
+    const order = await Order(req.body).save()
+    res.send(order)
+  })
+
+app.get("/api/orders", async(req, res) => {
+    const orders = await Order.find({})
+    res.send(orders)
+})
+
+app.delete("/api/orders/:id", async(req, res) => {
+    const order = await Order.findByIdAndDelete(req.params.id)
+    res.send(order)
+})
 
 const port = process.env.PORT || 5000
 app.listen(port, () => console.log("server at http://localhost:5000"))
