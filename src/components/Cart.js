@@ -5,7 +5,7 @@ import Modal from "react-modal"
 import Zoom from "react-reveal/Zoom"
 import { connect } from 'react-redux'
 import { removeFromCart } from "../actions/cartActions"
-
+import { clearOrder, createOrder } from "../actions/orderActions"
 
 class Cart extends Component {
   constructor(props) {
@@ -14,7 +14,6 @@ class Cart extends Component {
       Name: '',
       Email: '',
       Address: '',
-      Order: null,
       showCheckout: false,
     }
   }
@@ -23,38 +22,31 @@ class Cart extends Component {
   }
   createOrder = (e) => {
     e.preventDefault()
-    const shortid = require('shortid')
     const order = {
-      _id: shortid.generate(),
       name: this.state.Name,
       email: this.state.Email,
       address: this.state.Address,
       cartItems: this.props.cartItems,
       total: this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0),
     }
-    this.setState({ Order: order })
     this.props.createOrder(order)
   }
-  closeModal = ()=>{
-    this.setState({Order:null})
-    localStorage.clear("cartItems")
-    window.location.reload()
-}
-  
+  closeModal = () => {
+    this.props.clearOrder()
+  }
+
   render() {
-    const date = new Date().toLocaleString()
-    const { cartItems } = this.props
-    const order = this.state.Order
-    console.log(date.toLocaleString())
+    const { cartItems, order } = this.props
+    const date = new Date(order?.createdAt).toLocaleString()
     return (
       <div>
         {cartItems.length === 0 ? (
-        <div className="cart cart-header">
-          Cart is Empty
-        </div>) : 
-        (<div className="cart cart-header">
-          You have {cartItems.length} product{cartItems.length > 1 ? "s" : ""} in your cart
-        </div>)}
+          <div className="cart cart-header">
+            Cart is Empty
+          </div>) :
+          (<div className="cart cart-header">
+            You have {cartItems.length} product{cartItems.length > 1 ? "s" : ""} in your cart
+          </div>)}
 
         {order && (
           <Modal isOpen={true} onRequestClose={this.closeModal}>
@@ -163,7 +155,7 @@ class Cart extends Component {
                           <label>Address</label>
                           <input
                             name="Address"
-                            type="text"     
+                            type="text"
                             required
                             onChange={this.handleInput}
                           ></input>
@@ -186,7 +178,10 @@ class Cart extends Component {
   }
 }
 export default connect((state) => ({
+  order: state.order.order,
   cartItems: state.cart.cartItems
-}),{
-  removeFromCart
+}), {
+  removeFromCart,
+  createOrder,
+  clearOrder
 })(Cart)
