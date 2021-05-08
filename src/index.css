@@ -38,13 +38,14 @@ body, select, input, button, textarea{
 header{
   grid-area: header;
   background-color: aquamarine;
+  justify-content: space-between;
   color: white;
   display: flex;
   align-items: center;
+  padding: 1rem;
 }
 header a{
   color: white;
-  margin-left: 1rem;
   text-decoration: none;
 }
 a{
@@ -260,4 +261,23 @@ input{
 
 .modal{
   width: 100rem;
+}
+
+/* orders */
+.orders {
+  width: 100%;
+}
+tbody > tr:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+td {
+  padding: 5px;
+  min-width: 17rem;
+  max-width: 19rem;
+  min-height: 20rem;
+  height: 5rem;
+  word-wrap: break-word;
+}
+th {
+  text-align: left;
 }
