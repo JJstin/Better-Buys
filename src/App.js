@@ -21,7 +21,7 @@ class App extends React.Component {
 
             </main>
             <footer>
-              Have Fun Shopping!
+              Have Fun Shopping! Made by Justin Shi
         </footer>
           </div>
         </BrowserRouter>
