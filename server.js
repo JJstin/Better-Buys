@@ -6,7 +6,12 @@ const shortid = require('shortid')
 const app = express()
 app.use(bodyParser.json())
 
-mongoose.connect("mongodb://localhost/react-store-db", {
+app.use("/", express.static(__dirname + "/build"))
+app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"))
+
+mongoose.connect(
+    process.env.MONGODB_URL || 
+    "mongodb://localhost/react-store-db", {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
