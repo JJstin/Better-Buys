@@ -2,72 +2,72 @@
     "products":[
         {
             "_id": "1",
-            "title": "sofa",
-            "description": "about sofa...",
+            "title": "Sofa",
+            "description": "About sofa...",
             "price": 499,
             "avaliableSizes": ["Small", "Large"],
             "image": "/images/sofa.jpeg"
         },
         {
             "_id": "2",
-            "title": "chair",
-            "description": "about chair...",
+            "title": "Chair",
+            "description": "About chair...",
             "price": 129,
             "avaliableSizes": ["Middium"],
             "image": "/images/chair.jpeg"
         },
         {
             "_id": "3",
-            "title": "clock",
-            "description": "about clock...",
+            "title": "Clock",
+            "description": "About clock...",
             "price": 69,
             "avaliableSizes": ["Small", "Middium", "Large"],
             "image": "/images/clock.jpeg"
         },
         {
             "_id": "4",
-            "title": "cup",
-            "description": "about cup...",
+            "title": "Cup",
+            "description": "About cup...",
             "price": 6,
             "avaliableSizes": ["Small"],
             "image": "/images/cup.jpeg"
         },
         {
             "_id": "5",
-            "title": "pouch",
-            "description": "about pouch...",
+            "title": "Pouch",
+            "description": "About pouch...",
             "price": 39,
             "avaliableSizes": ["Small", "Middium"],
             "image": "/images/pouch.jpeg"
         },
         {
             "_id": "6",
-            "title": "statuette",
-            "description": "about statuette...",
+            "title": "Statuette",
+            "description": "About statuette...",
             "price": 159,
             "avaliableSizes": ["Middium"],
             "image": "/images/statuette.jpeg"
         },
         {
             "_id": "7",
-            "title": "bag",
-            "description": "about bag...",
+            "title": "Bag",
+            "description": "About bag...",
             "price": 199,
             "avaliableSizes": ["Middium", "Large"],
             "image": "/images/bag.jpeg"
         },
         {
             "_id": "8",
-            "title": "vase I",
-            "description": "about vase I...",
+            "title": "Vase I",
+            "description": "About vase I...",
             "price": 79,
             "avaliableSizes": ["Small", "Middium"],
             "image": "/images/vase1.jpeg"
         },
         {
             "_id": "9",
-            "title": "vase II",
-            "description": "about vase II...",
+            "title": "Vase II",
+            "description": "About vase II...",
             "price": 299,
             "avaliableSizes": ["Small"],
             "image": "/images/vase2.jpeg"
