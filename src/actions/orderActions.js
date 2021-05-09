@@ -23,8 +23,5 @@ export const clearOrder = () => (dispatch) => {
 export const fetchOrder = () => (dispatch) => {
     fetch("/api/orders")
         .then((res) => res.json())
-        .then((data) => {
-            console.log(data)
-            dispatch({ type: FETCH_ORDERS, payload: data })
-        })
+        .then((data) => { dispatch({ type: FETCH_ORDERS, payload: data }) })
 }

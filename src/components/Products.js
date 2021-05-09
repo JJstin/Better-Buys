@@ -6,6 +6,7 @@ import Modal from "react-modal"
 import { connect } from 'react-redux'
 import { fetchProducts } from "../actions/productActions"
 import { addToCart } from "../actions/cartActions"
+import Button from '@material-ui/core/Button';
 
 class Products extends Component {
     constructor(props) {
@@ -32,9 +33,9 @@ class Products extends Component {
                         {this.props.products.map(product => (
                             <li key={product._id}>
                                 <div className="product">
-                                    <a href={"#" + product._id} onClick={() => this.openModal(product)}>
+                                    <a href={"#" + product._id} onClick={() => this.openModal(product)} className="product-card">
                                         <img src={product.image} alt={product.title}></img>
-                                        <p>
+                                        <p className="product-title">
                                             {product.title}
                                         </p>
                                     </a>
@@ -42,9 +43,9 @@ class Products extends Component {
                                         <div>
                                             {formatCurrency(product.price)}
                                         </div>
-                                        <button className="button primary" onClick={() => this.props.addToCart(product)}>
+                                        <Button variant="contained" color="primary" disableElevation className="button-primary" style={{ fontSize: "15px" }} onClick={() => this.props.addToCart(product)}>
                                             Add to Cart
-                                    </button>
+                                        </Button>
                                     </div>
                                 </div>
                             </li>
@@ -81,13 +82,19 @@ class Products extends Component {
                                     </p>
                                     <div className="productPrice">
                                         <div>{formatCurrency(product.price)}</div>
-                                        <button
+                                        <Button
                                             onClick={() => {
                                                 this.props.addToCart(product)
                                                 this.closeModal()
                                             }}
-                                            className="button primary"
-                                        >Add To Cart</button>
+                                            variant="contained"
+                                            color="primary"
+                                            disableElevation
+                                            className="button-primary"
+                                            style={{ fontSize: "15px" }}
+                                        >
+                                            Add To Cart
+                                        </Button>
                                     </div>
                                 </div>
                             </div>
