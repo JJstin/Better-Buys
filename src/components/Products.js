@@ -33,12 +33,12 @@ class Products extends Component {
                         {this.props.products.map(product => (
                             <li key={product._id}>
                                 <div className="product">
-                                    <a href={"#" + product._id} onClick={() => this.openModal(product)} className="product-card">
+                                    <span onClick={() => this.openModal(product)} className="product-card">
                                         <img src={product.image} alt={product.title}></img>
                                         <p className="product-title">
                                             {product.title}
                                         </p>
-                                    </a>
+                                    </span>
                                     <div className="productPrice">
                                         <div>
                                             {formatCurrency(product.price)}

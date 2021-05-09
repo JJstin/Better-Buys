@@ -53,6 +53,15 @@ header a:hover{
   color: yellow;
   border: none;
 }
+.product-card{
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.product-card:hover{
+  color: rgb(51, 24, 206);
+  border: 0.1rem #000000 solid;
+}
 a{
   text-decoration: none;
   color: black;
@@ -266,7 +275,6 @@ input{
 }
 .order-details .items {
   text-align: right;
-  padding: 10000;
 }
 .success-message {
   color: green;
@@ -278,7 +286,8 @@ input{
 
 /* orders */
 .orders {
-  width: 100%;
+  width: 95%;
+  padding: 1rem;
 }
 tbody > tr:nth-child(odd) {
   background-color: #f0f0f0;
