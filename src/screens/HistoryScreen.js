@@ -5,7 +5,7 @@ export default class HistoryScreen extends Component {
     render() {
         return (
             <div>
-                <Orders/>
+                <Orders />
             </div>
         )
     }

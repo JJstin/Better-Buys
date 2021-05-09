@@ -6,6 +6,7 @@ import Zoom from "react-reveal/Zoom"
 import { connect } from 'react-redux'
 import { removeFromCart } from "../actions/cartActions"
 import { clearOrder, createOrder } from "../actions/orderActions"
+import { Button } from '@material-ui/core'
 
 class Cart extends Component {
   constructor(props) {
@@ -125,7 +126,7 @@ class Cart extends Component {
                     Total:{' '}
                     {formatCurrency(cartItems.reduce((a, c) => a + c.price * c.count, 0))}
                   </div>
-                  <button className="button primary" onClick={() => this.setState({ showCheckout: true })}>Proceed</button>
+                  <Button variant="contained" color="primary" disableElevation className="button-primary" style={{ fontSize: "15px" }} onClick={() => this.setState({ showCheckout: true })}>Proceed</Button>
                 </div>
               </div>
               {this.state.showCheckout && (
@@ -161,9 +162,9 @@ class Cart extends Component {
                           ></input>
                         </li>
                         <li>
-                          <button type="submit" className="button primary" onClick={this.createOrder}>
+                          <Button type="submit" variant="contained" color="primary" disableElevation className="button-primary" style={{ fontSize: "15px" }}>
                             Check Out
-                          </button>
+                          </Button>
                         </li>
                       </ul>
                     </form>

@@ -12,13 +12,13 @@ class App extends React.Component {
         <BrowserRouter>
           <div className="grid-container">
             <header>
-              <Link to="/">React Shopping Cart</Link>
+              <Link to="/">Better Buys</Link>
               <Link to="/history">History</Link>
             </header>
             <main>
-              <Route path="/history" component={HistoryScreen}/>
-              <Route path="/" component={HomeScreen} exact/>
-              
+              <Route path="/history" component={HistoryScreen} />
+              <Route path="/" component={HomeScreen} exact />
+
             </main>
             <footer>
               Have Fun Shopping!

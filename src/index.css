@@ -37,7 +37,7 @@ body, select, input, button, textarea{
 }
 header{
   grid-area: header;
-  background-color: aquamarine;
+  background-color: rgb(51, 24, 206);
   justify-content: space-between;
   color: white;
   display: flex;
@@ -47,19 +47,26 @@ header{
 header a{
   color: white;
   text-decoration: none;
+  font-size: 2.5rem;
+}
+header a:hover{
+  color: yellow;
+  border: none;
 }
 a{
   text-decoration: none;
+  color: black;
 }
 a:hover{
-  color: black;
+  color: rgb(51, 24, 206);
+  border: 0.1rem #000000 solid;
 }
 main{
   grid-area: main;
 }
 footer{
   grid-area: footer;
-  background-color: aquamarine;
+  background-color: rgb(51, 24, 206);
   color: white;
   display: flex;
   justify-content: center;
@@ -86,6 +93,13 @@ footer{
   padding: 0;
   margin: 0;
   list-style-type: none;
+}
+
+.product-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
 
 .products li{
@@ -129,9 +143,8 @@ footer{
   border: 0.1rem #0e0d0d solid;
 }
 .button.primary{
-  background-color: chartreuse;
+  height:4rem;
 }
-
 /* filter */
 .filter{
   display: flex;
