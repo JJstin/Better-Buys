@@ -2,9 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Demo
-link: https://better-buy-s.herokuapp.com/.
-
 ## Setup
 
 1, Install libraries with `npm install`.
